@@ -7,9 +7,11 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ArticleListPage from "./pages/ArticleListPage";
-import ArticlePage from "./pages/ArticlePage";
+import ArticlePage, { Loader as ArticleLoader } from "./pages/ArticlePage";
 import Layout from "./Layout";
 import NotFoundPage from "./pages/NotFoundPage";
+import LoginPage from "./pages/LoginPage";
+import CreateAccountPage from "./pages/CreateAccountPage";
 
 const routes: RouteObject[] = [
   {
@@ -32,6 +34,15 @@ const routes: RouteObject[] = [
       {
         path: "/articles/:name",
         element: <ArticlePage />,
+        loader: ArticleLoader,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/create-account",
+        element: <CreateAccountPage />,
       },
     ],
   },
