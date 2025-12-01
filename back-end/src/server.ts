@@ -38,6 +38,11 @@ async function connectToDB() {
     await client.connect();
 
     db = client.db("full-stack-react-db");
+  } else {
+    console.log(
+      `uri=${uri}`,
+      `process.env.MONGODB_URI=${process.env.MONGODB_URI}`
+    );
   }
 }
 
